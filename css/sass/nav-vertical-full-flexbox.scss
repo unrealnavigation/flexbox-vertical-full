@@ -1,0 +1,217 @@
+@import 'bits';
+
+//////////////////////////////////////////////////////
+/////////////////horizonal-full
+//////////////////////////////////////////////////////
+li.logo a:link, li.logo a:visited,
+li.nav-small a:link, li.nav-small a:visited {
+	padding: 0;
+}
+li.nav-small a:link, li.nav-small a:visited {
+	text-align: right;
+	width: 100%;	
+}
+
+li.logo-moblie a:link, li.logo-moblie a:visited {
+	width: 93.5%;
+	padding: 0 0 0 6.5%;
+	text-align: left;
+}
+
+li.logo a:link, li.logo a:visited {
+	text-align: right;
+	width: 90%;
+	padding: 0 10% 0 0;
+}
+
+li.nav-small a:hover, li.nav-small a:active, li.nav-small a:focus, 
+li.logo-moblie a:hover, li.logo-moblie a:active, li.logo-moblie a:focus {
+	color: #00ff16;
+	background: none;
+}
+
+.logo img, li.logo-moblie img {
+	width: 100%;
+	max-width: 70px;	
+}
+
+.logo {
+	display: none;
+}
+
+.nav-small img {
+	height: 50px;
+	width: 50px;
+}
+
+.nav-small a img {
+}	
+
+
+header {
+	background: $navbg;
+	border-bottom: 5px solid #00ff16;
+	
+	nav {
+		@include trans(all,.25s);			
+		ul {
+			@include flexbox();
+			@include flexflow(row wrap);
+			@include justify(center);
+			
+			li {
+				@include flex(1 1 50%);
+				a:link, a:visited {
+					width: 94%;
+					display: block;
+					padding: 1em 3%;
+					text-align: center;
+					text-decoration: none;
+					color: #111;
+					font-family: $navfont;
+					font-size: 1em;
+					@include trans(all,.5s);
+				}
+				
+				a:hover, a:active, a:focus {
+					color: #000;
+					background: #00ff16;
+				}
+			}
+		}
+	}
+}
+
+header + article, footer {
+
+}
+
+
+.smallnavjs {
+	margin-top: -5.9em
+}
+@media screen and (min-width: $i4) and (min-height: 400px) {
+	.smallnavjs {
+		margin-top: 0 !important;
+	}
+	
+	
+	li.nav-small {
+		display: none;
+	}
+	
+	.logo {
+		display: block;
+	}
+	
+	li.logo-moblie {
+		display: none;
+	}
+	
+	div.container {
+	height: 100%;
+	//overflow-x: scroll;
+	}
+	header {
+		height: 100%;
+		width: 30%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		border-bottom: 0px solid #00ff16;
+		border-right: 5px double #00ff16;
+		nav {
+					
+			ul {
+			
+				li:nth-of-type(5) a:link,
+				li:nth-of-type(5) a:visited {
+					border-bottom: 0px solid #eee;
+				}
+				li {
+					@include flex(1 1 100%);
+					a:link, a:visited {
+						text-align: right;
+						width: 80%;
+						padding: 1em 10%;
+						border-bottom: 2px solid #eee;
+						font-size: 1.1em;
+					}
+					
+					a:hover, a:active, a:focus {
+						
+					}
+
+				}
+			}
+		}
+	}	
+	
+	article, footer {
+		float: right;
+		margin: 1em 4%;
+		width: 62%;
+	}
+
+
+	li.logo a:link, li.logo a:visited {
+		@include trans(all,.5s);
+		width: 90%;
+		padding: 1em 5%;
+	}
+}
+
+@media screen and (min-width: $v6) and (min-height: 400px) {
+	article, footer {
+		width: 67%;
+	}
+	
+	header {
+		width: 25%;
+
+		nav {
+						
+			ul {
+				
+				li {
+					
+					a:link, a:visited {
+			
+					}
+					
+					a:hover, a:active, a:focus {
+					}
+				}
+			}
+		}
+	}
+	
+}
+
+
+@media screen and (min-width: $v8) and (min-height: 400px) {
+	article, footer {
+		width: 72%;
+	}
+	
+	header {
+		width: 20%;
+
+		nav {
+						
+			ul {
+				
+				li {
+					
+					a:link, a:visited {
+			
+					}
+					
+					a:hover, a:active, a:focus {
+					}
+				}
+			}
+		}
+	}
+	
+}
